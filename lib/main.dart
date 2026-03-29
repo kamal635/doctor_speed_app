@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'app/theme/app_theme.dart';
+
 void main() {
   runApp(const DoctorSpeedApp());
 }
@@ -7,9 +9,15 @@ void main() {
 class DoctorSpeedApp extends StatelessWidget {
   const DoctorSpeedApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp();
+    return MaterialApp(
+      title: 'Doctor Speed',
+      debugShowCheckedModeBanner: false,
+      theme: AppTheme.light,
+      darkTheme: AppTheme.dark,
+      themeMode: ThemeMode.system,
+      home: const Scaffold(body: Center(child: Text('Doctor Speed'))),
+    );
   }
 }
