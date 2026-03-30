@@ -10,7 +10,7 @@ abstract final class AppTheme {
   static ThemeData get dark => _buildDarkTheme();
 
   static ThemeData _buildLightTheme() {
-    const scaffoldBackground = AppColors.white;
+    const scaffoldBackground = AppColors.neutral100;
     const surface = AppColors.white;
     const textPrimary = AppColors.neutral900;
     const textSecondary = AppColors.neutral700;
@@ -42,7 +42,6 @@ abstract final class AppTheme {
         textPrimary: textPrimary,
         textSecondary: textSecondary,
         textTertiary: textTertiary,
-        textOnPrimary: AppColors.white,
       ),
       appBarTheme: AppBarTheme(
         backgroundColor: scaffoldBackground,
@@ -105,7 +104,6 @@ abstract final class AppTheme {
         textPrimary: textPrimary,
         textSecondary: textSecondary,
         textTertiary: textTertiary,
-        textOnPrimary: AppColors.white,
       ),
       appBarTheme: AppBarTheme(
         backgroundColor: scaffoldBackground,
@@ -139,7 +137,6 @@ abstract final class AppTheme {
     required Color textPrimary,
     required Color textSecondary,
     required Color textTertiary,
-    required Color textOnPrimary,
   }) {
     return TextTheme(
       displayLarge: AppTypography.displayLarge.copyWith(color: textPrimary),

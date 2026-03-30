@@ -1,23 +1,6 @@
-import 'package:flutter/material.dart';
-
-import 'app/theme/app_theme.dart';
+import 'app/bootstrap/bootstrap.dart';
+import 'app/bootstrap/doctor_speed_app.dart';
 
 void main() {
-  runApp(const DoctorSpeedApp());
-}
-
-class DoctorSpeedApp extends StatelessWidget {
-  const DoctorSpeedApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Doctor Speed',
-      debugShowCheckedModeBanner: false,
-      theme: AppTheme.light,
-      darkTheme: AppTheme.dark,
-      themeMode: ThemeMode.system,
-      home: const Scaffold(body: Center(child: Text('Doctor Speed'))),
-    );
-  }
+  bootstrap(() => const DoctorSpeedApp());
 }
