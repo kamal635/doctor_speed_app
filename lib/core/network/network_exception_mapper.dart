@@ -1,25 +1,17 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
+import 'package:doctor_speed_app/core/errors/failure_mapper.dart';
 
 import '../errors/failure.dart';
 import '../errors/failure_code.dart';
 
 Failure mapNetworkException(Object error, [StackTrace? stackTrace]) {
-  if (error is Failure) {
-    return error;
-  }
-
   if (error is DioException) {
     return _mapDioException(error, stackTrace);
   }
 
-  return Failure(
-    code: FailureCode.unknown,
-    message: error.toString(),
-    cause: error,
-    stackTrace: stackTrace,
-  );
+  return mapToFailure(error, stackTrace);
 }
 
 Failure _mapDioException(DioException error, StackTrace? stackTrace) {
