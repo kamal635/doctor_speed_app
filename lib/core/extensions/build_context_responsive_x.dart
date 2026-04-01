@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 import '../../shared/design_system/app_breakpoints.dart';
 import '../../shared/design_system/app_window_size_class.dart';
 
-extension BuildContextResponsiveX on BuildContext {
+extension BuildContextResponsiveXs on BuildContext {
   Size get windowSize => MediaQuery.sizeOf(this);
 
   double get windowWidth => windowSize.width;
