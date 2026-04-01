@@ -1,5 +1,6 @@
 import 'package:doctor_speed_app/shared/widgets/buttons/app_button.dart';
 import 'package:doctor_speed_app/shared/widgets/buttons/app_outlined_button.dart';
+import 'package:doctor_speed_app/shared/widgets/buttons/app_text_button.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -26,6 +27,7 @@ class _PlaceholderPage extends StatelessWidget {
       appBar: AppBar(title: const Text('Doctor Speed')),
       body: Column(
         children: [
+          AppTextButton(label: 'forgot password?', onPressed: () {}),
           AppOutlinedButton(
             isExpanded: false,
             label: 'outlined',
