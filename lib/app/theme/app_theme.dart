@@ -193,9 +193,14 @@ abstract final class AppTheme {
     return FilledButtonThemeData(
       style: FilledButton.styleFrom(
         elevation: 0,
+        padding: const EdgeInsets.symmetric(
+          horizontal: AppSpacing.lg,
+          vertical: AppSpacing.md,
+        ),
         backgroundColor: colorScheme.primary,
         foregroundColor: colorScheme.onPrimary,
         textStyle: AppTypography.button,
+        shape: const RoundedRectangleBorder(borderRadius: AppRadius.radiusPill),
       ),
     );
   }
@@ -212,7 +217,7 @@ abstract final class AppTheme {
         backgroundColor: colorScheme.primary,
         foregroundColor: colorScheme.onPrimary,
         textStyle: AppTypography.button,
-        shape: const RoundedRectangleBorder(borderRadius: AppRadius.radiusMd),
+        shape: const RoundedRectangleBorder(borderRadius: AppRadius.radiusPill),
       ),
     );
   }
@@ -220,7 +225,7 @@ abstract final class AppTheme {
   static OutlinedButtonThemeData _outlinedButtonTheme(ColorScheme colorScheme) {
     return OutlinedButtonThemeData(
       style: OutlinedButton.styleFrom(
-        minimumSize: const Size.fromHeight(52),
+        // minimumSize: const Size.fromHeight(52),
         padding: const EdgeInsets.symmetric(
           horizontal: AppSpacing.lg,
           vertical: AppSpacing.md,
@@ -230,7 +235,7 @@ abstract final class AppTheme {
           color: colorScheme.primary,
         ),
         side: BorderSide(color: colorScheme.outline),
-        shape: const RoundedRectangleBorder(borderRadius: AppRadius.radiusMd),
+        shape: const RoundedRectangleBorder(borderRadius: AppRadius.radiusPill),
       ),
     );
   }

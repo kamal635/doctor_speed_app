@@ -1,4 +1,5 @@
 import 'package:doctor_speed_app/shared/widgets/buttons/app_button.dart';
+import 'package:doctor_speed_app/shared/widgets/buttons/app_outlined_button.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -25,8 +26,14 @@ class _PlaceholderPage extends StatelessWidget {
       appBar: AppBar(title: const Text('Doctor Speed')),
       body: Column(
         children: [
+          AppOutlinedButton(
+            isExpanded: false,
+            label: 'outlined',
+            onPressed: () {},
+            icon: Icon(Icons.abc_outlined),
+          ),
           AppButton(
-            // isExpanded: false,
+            isExpanded: false,
             label: 'continue',
             onPressed: () {},
             icon: Icon(Icons.abc_outlined),
