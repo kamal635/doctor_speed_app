@@ -1,3 +1,5 @@
+import 'package:doctor_speed_app/core/extensions/string_x.dart';
+
 import 'email_validator.dart';
 import 'phone_validator.dart';
 
@@ -5,9 +7,9 @@ String? validateEmailOrPhone(
   String? value, {
   String message = 'Please enter a valid email address or phone number.',
 }) {
-  final trimmedValue = value?.trim() ?? '';
+  final trimmedValue = value?.trimmedOrNull;
 
-  if (trimmedValue.isEmpty) {
+  if (trimmedValue == null) {
     return null;
   }
 

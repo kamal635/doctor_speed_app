@@ -1,11 +1,13 @@
+import 'package:doctor_speed_app/core/extensions/string_x.dart';
+
 String? validatePassword(
   String? value, {
   String message =
       'Password must be at least 8 characters, include letters and numbers, and contain no spaces.',
 }) {
-  final trimmedValue = value?.trim() ?? '';
+  final trimmedValue = value?.trimmedOrNull;
 
-  if (trimmedValue.isEmpty) {
+  if (trimmedValue == null) {
     return null;
   }
 
