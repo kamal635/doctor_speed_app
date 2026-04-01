@@ -1,3 +1,4 @@
+import 'package:doctor_speed_app/shared/widgets/buttons/app_button.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -22,11 +23,21 @@ class _PlaceholderPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Doctor Speed')),
-      body: Center(
-        child: Text(
-          'Router is ready',
-          style: Theme.of(context).textTheme.titleMedium,
-        ),
+      body: Column(
+        children: [
+          AppButton(
+            // isExpanded: false,
+            label: 'continue',
+            onPressed: () {},
+            icon: Icon(Icons.abc_outlined),
+          ),
+          Center(
+            child: Text(
+              'Router is ready',
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
+          ),
+        ],
       ),
     );
   }

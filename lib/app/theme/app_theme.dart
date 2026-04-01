@@ -60,6 +60,7 @@ abstract final class AppTheme {
         errorColor: AppColors.error,
       ),
       elevatedButtonTheme: _elevatedButtonTheme(colorScheme),
+      filledButtonTheme: _filledButtonTheme(colorScheme),
       outlinedButtonTheme: _outlinedButtonTheme(colorScheme),
       textButtonTheme: _textButtonTheme(colorScheme),
       cardTheme: const CardThemeData(
@@ -122,6 +123,7 @@ abstract final class AppTheme {
         errorColor: AppColors.error,
       ),
       elevatedButtonTheme: _elevatedButtonTheme(colorScheme),
+      filledButtonTheme: _filledButtonTheme(colorScheme),
       outlinedButtonTheme: _outlinedButtonTheme(colorScheme),
       textButtonTheme: _textButtonTheme(colorScheme),
       cardTheme: const CardThemeData(
@@ -184,6 +186,17 @@ abstract final class AppTheme {
       focusedBorder: border(focusedBorderColor),
       errorBorder: border(errorColor),
       focusedErrorBorder: border(errorColor),
+    );
+  }
+
+  static FilledButtonThemeData _filledButtonTheme(ColorScheme colorScheme) {
+    return FilledButtonThemeData(
+      style: FilledButton.styleFrom(
+        elevation: 0,
+        backgroundColor: colorScheme.primary,
+        foregroundColor: colorScheme.onPrimary,
+        textStyle: AppTypography.button,
+      ),
     );
   }
 
