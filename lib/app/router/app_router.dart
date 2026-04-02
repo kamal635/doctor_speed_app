@@ -1,4 +1,5 @@
 import 'package:doctor_speed_app/shared/widgets/app_gaps.dart';
+import 'package:doctor_speed_app/shared/widgets/loading/app_linear_loading.dart';
 import 'package:doctor_speed_app/shared/widgets/loading/app_loading_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -25,7 +26,10 @@ class _PlaceholderPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('Doctor Speed')),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          AppGaps.h12,
+          const AppLinearLoading(value: 0.6),
           AppGaps.h12,
           const AppLoadingIndicator(),
           Center(
