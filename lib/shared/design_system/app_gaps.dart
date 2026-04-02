@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 
-import '../design_system/app_spacing.dart';
+import 'app_spacing.dart';
 
 abstract final class AppGaps {
   static const Widget h4 = SizedBox(height: AppSpacing.xxs);

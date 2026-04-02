@@ -200,7 +200,7 @@ abstract final class AppTheme {
         backgroundColor: colorScheme.primary,
         foregroundColor: colorScheme.onPrimary,
         textStyle: AppTypography.button,
-        shape: const RoundedRectangleBorder(borderRadius: AppRadius.radiusPill),
+        shape: const RoundedRectangleBorder(borderRadius: AppRadius.radiusMd),
       ),
     );
   }
@@ -217,7 +217,7 @@ abstract final class AppTheme {
         backgroundColor: colorScheme.primary,
         foregroundColor: colorScheme.onPrimary,
         textStyle: AppTypography.button,
-        shape: const RoundedRectangleBorder(borderRadius: AppRadius.radiusPill),
+        shape: const RoundedRectangleBorder(borderRadius: AppRadius.radiusMd),
       ),
     );
   }
@@ -235,7 +235,7 @@ abstract final class AppTheme {
           color: colorScheme.primary,
         ),
         side: BorderSide(color: colorScheme.outline),
-        shape: const RoundedRectangleBorder(borderRadius: AppRadius.radiusPill),
+        shape: const RoundedRectangleBorder(borderRadius: AppRadius.radiusMd),
       ),
     );
   }

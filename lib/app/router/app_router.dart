@@ -1,4 +1,4 @@
-import 'package:doctor_speed_app/core/extensions/build_context_theme_x.dart';
+import 'package:doctor_speed_app/shared/widgets/state_views/app_empty_state.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -23,21 +23,11 @@ class _PlaceholderPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Doctor Speed')),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(24.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Center(
-                child: Text(
-                  'Router is ready',
-                  style: context.textTheme.titleMedium,
-                ),
-              ),
-            ],
-          ),
-        ),
+      body: AppEmptyState(
+        title: 'No doctors found',
+        message: 'Try changing your search or filters.',
+        actionLabel: 'Retry',
+        onActionPressed: () {},
       ),
     );
   }
