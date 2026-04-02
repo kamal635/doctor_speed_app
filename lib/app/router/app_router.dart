@@ -1,16 +1,4 @@
-import 'package:doctor_speed_app/core/validators/compose_validators.dart';
-import 'package:doctor_speed_app/core/validators/email_or_phone_validator.dart';
-import 'package:doctor_speed_app/core/validators/password_validator.dart';
-import 'package:doctor_speed_app/core/validators/required_validator.dart';
-import 'package:doctor_speed_app/shared/widgets/app_gaps.dart';
-import 'package:doctor_speed_app/shared/widgets/buttons/app_button.dart';
-import 'package:doctor_speed_app/shared/widgets/buttons/app_icon_button.dart';
-import 'package:doctor_speed_app/shared/widgets/buttons/app_outlined_button.dart';
-import 'package:doctor_speed_app/shared/widgets/buttons/app_text_button.dart';
-import 'package:doctor_speed_app/shared/widgets/inputs/app_multiline_field.dart';
-import 'package:doctor_speed_app/shared/widgets/inputs/app_password_field.dart';
-import 'package:doctor_speed_app/shared/widgets/inputs/app_search_field.dart';
-import 'package:doctor_speed_app/shared/widgets/inputs/app_text_field.dart';
+import 'package:doctor_speed_app/core/extensions/build_context_theme_x.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -35,69 +23,21 @@ class _PlaceholderPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Doctor Speed')),
-      body: Column(
-        children: [
-          AppGaps.h12,
-          AppMultilineField(
-            labelText: 'Description',
-            hintText: 'Write details here',
-            validator: (value) => validateRequired(value),
-          ),
-          AppGaps.h12,
-          AppSearchField(hintText: 'Search doctors', onChanged: (value) {}),
-          AppGaps.h12,
-          AppPasswordField(
-            labelText: 'Password',
-            hintText: 'Enter your password',
-            textInputAction: TextInputAction.done,
-            validator: composeValidators([
-              (value) =>
-                  validateRequired(value, message: 'Password is required.'),
-              (value) => validatePassword(value),
-            ]),
-          ),
-          AppGaps.h12,
-          AppTextField(
-            // obscureText: true,
-            onFieldSubmitted: (value) {},
-
-            helperText: 'enter valid email',
-            labelText: 'Email or phone',
-            hintText: 'Enter your email or phone',
-            textInputAction: TextInputAction.next,
-            validator: composeValidators([
-              (value) => validateRequired(
-                value,
-                message: 'Email or phone is required.',
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(24.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Center(
+                child: Text(
+                  'Router is ready',
+                  style: context.textTheme.titleMedium,
+                ),
               ),
-              (value) => validateEmailOrPhone(value),
-            ]),
+            ],
           ),
-          AppIconButton(
-            icon: Icon(Icons.abc_sharp),
-            onPressed: () {},
-            tooltip: 'tooool',
-          ),
-          AppTextButton(label: 'forgot password?', onPressed: () {}),
-          AppOutlinedButton(
-            isExpanded: false,
-            label: 'outlined',
-            onPressed: () {},
-            icon: Icon(Icons.abc_outlined),
-          ),
-          AppButton(
-            isExpanded: false,
-            label: 'continue',
-            onPressed: () {},
-            icon: Icon(Icons.abc_outlined),
-          ),
-          Center(
-            child: Text(
-              'Router is ready',
-              style: Theme.of(context).textTheme.titleMedium,
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }
