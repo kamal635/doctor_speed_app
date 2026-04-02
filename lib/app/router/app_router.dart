@@ -8,6 +8,7 @@ import 'package:doctor_speed_app/shared/widgets/buttons/app_icon_button.dart';
 import 'package:doctor_speed_app/shared/widgets/buttons/app_outlined_button.dart';
 import 'package:doctor_speed_app/shared/widgets/buttons/app_text_button.dart';
 import 'package:doctor_speed_app/shared/widgets/inputs/app_password_field.dart';
+import 'package:doctor_speed_app/shared/widgets/inputs/app_search_field.dart';
 import 'package:doctor_speed_app/shared/widgets/inputs/app_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -36,7 +37,8 @@ class _PlaceholderPage extends StatelessWidget {
       body: Column(
         children: [
           AppGaps.h12,
-
+          AppSearchField(hintText: 'Search doctors', onChanged: (value) {}),
+          AppGaps.h12,
           AppPasswordField(
             labelText: 'Password',
             hintText: 'Enter your password',
@@ -47,6 +49,7 @@ class _PlaceholderPage extends StatelessWidget {
               (value) => validatePassword(value),
             ]),
           ),
+          AppGaps.h12,
           AppTextField(
             // obscureText: true,
             onFieldSubmitted: (value) {},
