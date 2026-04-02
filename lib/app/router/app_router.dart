@@ -7,6 +7,7 @@ import 'package:doctor_speed_app/shared/widgets/buttons/app_button.dart';
 import 'package:doctor_speed_app/shared/widgets/buttons/app_icon_button.dart';
 import 'package:doctor_speed_app/shared/widgets/buttons/app_outlined_button.dart';
 import 'package:doctor_speed_app/shared/widgets/buttons/app_text_button.dart';
+import 'package:doctor_speed_app/shared/widgets/inputs/app_multiline_field.dart';
 import 'package:doctor_speed_app/shared/widgets/inputs/app_password_field.dart';
 import 'package:doctor_speed_app/shared/widgets/inputs/app_search_field.dart';
 import 'package:doctor_speed_app/shared/widgets/inputs/app_text_field.dart';
@@ -36,6 +37,12 @@ class _PlaceholderPage extends StatelessWidget {
       appBar: AppBar(title: const Text('Doctor Speed')),
       body: Column(
         children: [
+          AppGaps.h12,
+          AppMultilineField(
+            labelText: 'Description',
+            hintText: 'Write details here',
+            validator: (value) => validateRequired(value),
+          ),
           AppGaps.h12,
           AppSearchField(hintText: 'Search doctors', onChanged: (value) {}),
           AppGaps.h12,
