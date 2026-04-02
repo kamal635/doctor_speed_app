@@ -1,7 +1,5 @@
 import 'package:doctor_speed_app/shared/widgets/buttons/app_button.dart';
-import 'package:doctor_speed_app/shared/widgets/buttons/app_outlined_button.dart';
-import 'package:doctor_speed_app/shared/widgets/feedback/app_dialog.dart';
-import 'package:doctor_speed_app/shared/widgets/inputs/app_text_field.dart';
+import 'package:doctor_speed_app/shared/widgets/feedback/app_confirm_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -32,32 +30,14 @@ class _PlaceholderPage extends StatelessWidget {
             AppButton(
               isExpanded: false,
               label: 'label',
-              onPressed: () {
-                showAppDialog(
+              onPressed: () async {
+                await showAppConfirmDialog(
+                  variant: AppConfirmDialogVariant.warning,
                   context,
-                  child: AppDialog(
-                    content: AppTextField(
-                      // controller: controller,
-                      hintText: 'File name',
-                    ),
-                    title: 'Delete document?',
-                    message: 'This action cannot be undone.',
-                    icon: const Icon(Icons.delete_outline, size: 40),
-                    actions: [
-                      AppButton(
-                        label: 'Delete',
-                        onPressed: () {
-                          Navigator.of(context).pop(true);
-                        },
-                      ),
-                      AppOutlinedButton(
-                        label: 'Cancel',
-                        onPressed: () {
-                          Navigator.of(context).pop(false);
-                        },
-                      ),
-                    ],
-                  ),
+                  title: 'Delete consultation?',
+                  message: 'This action cannot be undone.',
+                  cancelLabel: 'asdasd',
+                  confirmLabel: 'asasdas',
                 );
               },
             ),

@@ -73,7 +73,7 @@ class _AppSnackBarContent extends StatelessWidget {
       child: Row(
         children: [
           Container(
-            padding: EdgeInsets.all(AppSpacing.s4),
+            padding: EdgeInsets.all(AppSpacing.s8),
             decoration: BoxDecoration(
               color: colors.accentSoft,
               shape: BoxShape.circle,
