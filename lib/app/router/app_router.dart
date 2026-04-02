@@ -1,4 +1,5 @@
 import 'package:doctor_speed_app/shared/widgets/app_gaps.dart';
+import 'package:doctor_speed_app/shared/widgets/loading/app_inline_loading.dart';
 import 'package:doctor_speed_app/shared/widgets/loading/app_linear_loading.dart';
 import 'package:doctor_speed_app/shared/widgets/loading/app_loading_indicator.dart';
 import 'package:flutter/material.dart';
@@ -28,6 +29,7 @@ class _PlaceholderPage extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          const AppInlineLoading(message: 'Initializing router...'),
           AppGaps.h12,
           const AppLinearLoading(value: 0.6),
           AppGaps.h12,
