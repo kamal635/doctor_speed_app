@@ -42,7 +42,7 @@ class AppLoadingOverlay extends StatelessWidget {
                     vertical: 16,
                   ),
                   decoration: BoxDecoration(
-                    color: Theme.of(context).colorScheme.surface,
+                    color: context.colorScheme.surface,
                     borderRadius: AppRadius.radiusLg,
                   ),
                   child: Column(
@@ -54,7 +54,7 @@ class AppLoadingOverlay extends StatelessWidget {
                         Text(
                           message!,
                           textAlign: TextAlign.center,
-                          style: Theme.of(context).textTheme.bodyMedium,
+                          style: context.textTheme.bodyMedium,
                         ),
                       ],
                     ],
