@@ -1,6 +1,5 @@
-import 'package:doctor_speed_app/core/errors/failure.dart';
-import 'package:doctor_speed_app/core/errors/failure_code.dart';
-import 'package:doctor_speed_app/shared/widgets/state_views/app_error_state.dart';
+import 'package:doctor_speed_app/shared/widgets/buttons/app_button.dart';
+import 'package:doctor_speed_app/shared/widgets/feedback/app_snackbar.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -25,13 +24,24 @@ class _PlaceholderPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Doctor Speed')),
-      body: AppErrorState(
-        failure: Failure(
-          code: FailureCode.forbidden,
-          message: 'This is a placeholder page.',
+      body: Center(
+        child: Column(
+          children: [
+            AppButton(
+              isExpanded: false,
+              label: 'label',
+              onPressed: () {
+                showAppSnackBar(
+                  context,
+                  message: 'Upload failed',
+                  variant: AppSnackBarVariant.success,
+                  actionLabel: 'Retry',
+                  onActionPressed: () {},
+                );
+              },
+            ),
+          ],
         ),
-        actionLabel: 'Retry',
-        onActionPressed: () {},
       ),
     );
   }
