@@ -66,14 +66,14 @@ class _AppSnackBarContent extends StatelessWidget {
         borderRadius: AppRadius.radiusLg,
         boxShadow: AppShadows.md,
         border: Border(
-          left: BorderSide(color: colors.accent, width: AppSpacing.xxs),
+          left: BorderSide(color: colors.accent, width: AppSpacing.s4),
         ),
       ),
       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 14),
       child: Row(
         children: [
           Container(
-            padding: EdgeInsets.all(AppSpacing.xxs),
+            padding: EdgeInsets.all(AppSpacing.s4),
             decoration: BoxDecoration(
               color: colors.accentSoft,
               shape: BoxShape.circle,
