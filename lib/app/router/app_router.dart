@@ -1,3 +1,4 @@
+import 'package:doctor_speed_app/shared/layouts/app_screen_padding.dart';
 import 'package:doctor_speed_app/shared/widgets/buttons/app_button.dart';
 import 'package:doctor_speed_app/shared/widgets/feedback/app_confirm_dialog.dart';
 import 'package:flutter/material.dart';
@@ -24,24 +25,24 @@ class _PlaceholderPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Doctor Speed')),
-      body: Center(
-        child: Column(
-          children: [
-            AppButton(
-              isExpanded: false,
-              label: 'label',
-              onPressed: () async {
-                await showAppConfirmDialog(
-                  variant: AppConfirmDialogVariant.warning,
-                  context,
-                  title: 'Delete consultation?',
-                  message: 'This action cannot be undone.',
-                  cancelLabel: 'asdasd',
-                  confirmLabel: 'asasdas',
-                );
-              },
-            ),
-          ],
+      body: AppScreenPadding(
+        child: Center(
+          child: Column(
+            children: [
+              AppButton(
+                // isExpanded: false,
+                label: 'label',
+                onPressed: () async {
+                  await showAppConfirmDialog(
+                    variant: AppConfirmDialogVariant.warning,
+                    context,
+                    title: 'Delete consultation?',
+                    message: 'This action cannot be undone.',
+                  );
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
