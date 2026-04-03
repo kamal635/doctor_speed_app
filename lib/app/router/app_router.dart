@@ -34,10 +34,9 @@ class _PlaceholderPage extends StatelessWidget {
                 label: 'label',
                 onPressed: () async {
                   await showAppConfirmDialog(
-                    variant: AppConfirmDialogVariant.warning,
                     context,
-                    title: 'Delete consultation?',
-                    message: 'This action cannot be undone.',
+                    title: 'title',
+                    variant: AppConfirmDialogVariant.warning,
                   );
                 },
               ),

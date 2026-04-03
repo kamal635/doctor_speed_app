@@ -1,5 +1,7 @@
 import 'package:doctor_speed_app/core/extensions/build_context_theme_x.dart';
 import 'package:doctor_speed_app/shared/design_system/app_gaps.dart';
+import 'package:doctor_speed_app/shared/design_system/app_icon_size.dart';
+import 'package:doctor_speed_app/shared/design_system/app_spacing.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/errors/failure.dart';
@@ -32,11 +34,11 @@ class AppErrorState extends StatelessWidget {
 
     return Center(
       child: Padding(
-        padding: const EdgeInsets.all(24),
+        padding: const EdgeInsets.all(AppSpacing.s24),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(icon, size: 48, color: colorScheme.error),
+            Icon(icon, size: AppIconSize.xxl, color: colorScheme.error),
 
             AppGaps.h16,
 

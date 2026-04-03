@@ -2,6 +2,7 @@ import 'package:doctor_speed_app/core/extensions/build_context_theme_x.dart';
 import 'package:doctor_speed_app/shared/design_system/app_colors.dart';
 import 'package:doctor_speed_app/shared/design_system/app_gaps.dart';
 import 'package:doctor_speed_app/shared/design_system/app_radius.dart';
+import 'package:doctor_speed_app/shared/design_system/app_spacing.dart';
 import 'package:flutter/material.dart';
 
 import 'app_loading_indicator.dart';
@@ -37,9 +38,9 @@ class AppLoadingOverlay extends StatelessWidget {
               color: barrierColor ?? AppColors.black.withValues(alpha: 0.3),
               child: Center(
                 child: Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 20,
-                    vertical: 16,
+                  padding: EdgeInsets.symmetric(
+                    horizontal: AppSpacing.s24,
+                    vertical: AppSpacing.s16,
                   ),
                   decoration: BoxDecoration(
                     color: context.colorScheme.surface,

@@ -1,7 +1,10 @@
+import 'package:doctor_speed_app/core/extensions/build_context_localizations_x.dart';
+import 'package:doctor_speed_app/l10n/generated/app_localizations.dart';
 import 'package:doctor_speed_app/shared/design_system/app_colors.dart';
 import 'package:doctor_speed_app/shared/design_system/app_icon_size.dart';
 import 'package:doctor_speed_app/shared/design_system/app_spacing.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../buttons/app_button.dart';
 import '../buttons/app_outlined_button.dart';
@@ -64,7 +67,8 @@ class AppConfirmDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
-    final config = _resolveConfig(colorScheme);
+    final l10n = context.l10n;
+    final config = _resolveConfig(colorScheme, l10n);
 
     return AppDialog(
       title: title,
@@ -91,27 +95,31 @@ class AppConfirmDialog extends StatelessWidget {
               : AppButtonVariant.primary,
           label: confirmLabel ?? config.defaultConfirmLabel,
           onPressed: () {
-            Navigator.of(context).pop(true);
+            context.pop(true);
           },
         ),
         AppOutlinedButton(
           label: cancelLabel ?? config.cancelLabelOverride,
           onPressed: () {
-            Navigator.of(context).pop(false);
+            context.pop(false);
           },
         ),
       ],
     );
   }
 
-  _AppConfirmDialogConfig _resolveConfig(ColorScheme colorScheme) {
+  _AppConfirmDialogConfig _resolveConfig(
+    ColorScheme colorScheme,
+    AppLocalizations l10n,
+  ) {
     switch (variant) {
       case AppConfirmDialogVariant.confirm:
         return _AppConfirmDialogConfig(
           iconData: Icons.check_circle,
           iconColor: AppColors.success,
           iconBackgroundColor: AppColors.success.withValues(alpha: 0.12),
-          defaultConfirmLabel: 'Confirm',
+          defaultConfirmLabel: l10n.commonConfirm,
+          cancelLabelOverride: l10n.commonCancel,
         );
 
       case AppConfirmDialogVariant.logout:
@@ -119,7 +127,8 @@ class AppConfirmDialog extends StatelessWidget {
           iconData: Icons.logout,
           iconColor: colorScheme.error,
           iconBackgroundColor: colorScheme.error.withValues(alpha: 0.12),
-          defaultConfirmLabel: 'Log out',
+          defaultConfirmLabel: l10n.commonConfirm,
+          cancelLabelOverride: l10n.commonCancel,
         );
 
       case AppConfirmDialogVariant.delete:
@@ -127,7 +136,8 @@ class AppConfirmDialog extends StatelessWidget {
           iconData: Icons.delete_forever,
           iconColor: colorScheme.error,
           iconBackgroundColor: colorScheme.error.withValues(alpha: 0.12),
-          defaultConfirmLabel: 'Delete',
+          defaultConfirmLabel: l10n.commonConfirm,
+          cancelLabelOverride: l10n.commonCancel,
         );
 
       case AppConfirmDialogVariant.warning:
@@ -135,8 +145,8 @@ class AppConfirmDialog extends StatelessWidget {
           iconData: Icons.warning,
           iconColor: AppColors.warning,
           iconBackgroundColor: AppColors.warning.withValues(alpha: 0.12),
-          defaultConfirmLabel: 'Save and Exit',
-          cancelLabelOverride: 'Discard Changes',
+          defaultConfirmLabel: l10n.commonConfirm,
+          cancelLabelOverride: l10n.commonDiscardChanges,
         );
     }
   }
@@ -148,7 +158,7 @@ class _AppConfirmDialogConfig {
     required this.iconColor,
     required this.iconBackgroundColor,
     required this.defaultConfirmLabel,
-    this.cancelLabelOverride = 'Cancel',
+    required this.cancelLabelOverride,
   });
 
   final IconData iconData;

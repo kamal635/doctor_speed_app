@@ -97,6 +97,24 @@ abstract class AppLocalizations {
     Locale('ar'),
     Locale('en'),
   ];
+
+  /// No description provided for @commonConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm'**
+  String get commonConfirm;
+
+  /// No description provided for @commonCancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get commonCancel;
+
+  /// No description provided for @commonDiscardChanges.
+  ///
+  /// In en, this message translates to:
+  /// **'Discard Changes'**
+  String get commonDiscardChanges;
 }
 
 class _AppLocalizationsDelegate
