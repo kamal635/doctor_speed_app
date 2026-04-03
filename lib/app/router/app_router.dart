@@ -1,4 +1,4 @@
-import 'package:doctor_speed_app/shared/layouts/app_screen_padding.dart';
+import 'package:doctor_speed_app/shared/layouts/app_safe_area_page.dart';
 import 'package:doctor_speed_app/shared/widgets/buttons/app_button.dart';
 import 'package:doctor_speed_app/shared/widgets/feedback/app_confirm_dialog.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +25,7 @@ class _PlaceholderPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Doctor Speed')),
-      body: AppScreenPadding(
+      body: AppSafeAreaPage(
         child: Center(
           child: Column(
             children: [
