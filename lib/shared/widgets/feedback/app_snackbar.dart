@@ -1,7 +1,9 @@
 import 'package:doctor_speed_app/core/extensions/build_context_theme_x.dart';
 import 'package:doctor_speed_app/shared/design_system/app_colors.dart';
 import 'package:doctor_speed_app/shared/design_system/app_durations.dart';
+import 'package:doctor_speed_app/shared/design_system/app_elevation.dart';
 import 'package:doctor_speed_app/shared/design_system/app_gaps.dart';
+import 'package:doctor_speed_app/shared/design_system/app_icon_size.dart';
 import 'package:doctor_speed_app/shared/design_system/app_radius.dart';
 import 'package:doctor_speed_app/shared/design_system/app_shadows.dart';
 import 'package:doctor_speed_app/shared/design_system/app_spacing.dart';
@@ -25,8 +27,8 @@ void showAppSnackBar(
     SnackBar(
       behavior: SnackBarBehavior.floating,
       backgroundColor: Colors.transparent,
-      elevation: 0,
-      margin: const EdgeInsets.all(16),
+      elevation: AppElevation.none,
+      margin: const EdgeInsets.all(AppSpacing.s16),
       duration: duration,
       content: _AppSnackBarContent(
         message: message,
@@ -65,11 +67,14 @@ class _AppSnackBarContent extends StatelessWidget {
         color: colorScheme.surface,
         borderRadius: AppRadius.radiusLg,
         boxShadow: AppShadows.md,
-        border: Border(
-          left: BorderSide(color: colors.accent, width: AppSpacing.s4),
+        border: BorderDirectional(
+          start: BorderSide(color: colors.accent, width: AppSpacing.s4),
         ),
       ),
-      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 14),
+      padding: const EdgeInsets.symmetric(
+        horizontal: AppSpacing.s16,
+        vertical: AppSpacing.s16,
+      ),
       child: Row(
         children: [
           Container(
@@ -81,7 +86,11 @@ class _AppSnackBarContent extends StatelessWidget {
 
             alignment: Alignment.center,
 
-            child: Icon(colors.icon, size: 16, color: colors.accent),
+            child: Icon(
+              colors.icon,
+              size: AppIconSize.xs,
+              color: colors.accent,
+            ),
           ),
 
           AppGaps.w12,

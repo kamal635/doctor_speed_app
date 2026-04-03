@@ -1,3 +1,5 @@
+import 'package:doctor_speed_app/core/constants/app_constants.dart';
+import 'package:doctor_speed_app/l10n/generated/app_localizations.dart';
 import 'package:flutter/material.dart';
 
 import '../router/app_router.dart';
@@ -9,12 +11,14 @@ class DoctorSpeedApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: 'Doctor Speed',
+      title: AppConstants.appName,
       debugShowCheckedModeBanner: false,
       theme: AppTheme.light,
       darkTheme: AppTheme.dark,
       themeMode: ThemeMode.system,
       routerConfig: appRouter,
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
     );
   }
 }

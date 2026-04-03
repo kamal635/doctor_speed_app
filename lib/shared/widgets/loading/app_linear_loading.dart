@@ -1,7 +1,12 @@
+import 'package:doctor_speed_app/shared/design_system/app_spacing.dart';
 import 'package:flutter/material.dart';
 
 class AppLinearLoading extends StatelessWidget {
-  const AppLinearLoading({super.key, this.minHeight = 4, this.value});
+  const AppLinearLoading({
+    super.key,
+    this.minHeight = AppSpacing.s4,
+    this.value,
+  });
 
   final double minHeight;
   final double? value;

@@ -1,9 +1,10 @@
+import 'package:doctor_speed_app/shared/design_system/app_spacing.dart';
 import 'package:flutter/material.dart';
 
 class AppLoadingIndicator extends StatelessWidget {
   const AppLoadingIndicator({
     super.key,
-    this.size = 24,
+    this.size = AppSpacing.s24,
     this.strokeWidth = 2.5,
   });
 

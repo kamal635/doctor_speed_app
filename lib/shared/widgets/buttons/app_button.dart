@@ -1,4 +1,5 @@
 import 'package:doctor_speed_app/core/extensions/build_context_theme_x.dart';
+import 'package:doctor_speed_app/shared/design_system/app_gaps.dart';
 import 'package:flutter/material.dart';
 
 enum AppButtonVariant { primary, secondary, destructive }
@@ -46,7 +47,7 @@ class AppButton extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          if (icon != null) ...[icon!, const SizedBox(width: 8)],
+          if (icon != null) ...[icon!, AppGaps.w8],
           Text(label),
         ],
       ),
