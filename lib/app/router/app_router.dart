@@ -1,4 +1,6 @@
-import 'package:doctor_speed_app/core/extensions/build_context_theme_x.dart';
+import 'package:doctor_speed_app/shared/layouts/app_safe_area_page.dart';
+import 'package:doctor_speed_app/shared/widgets/buttons/app_button.dart';
+import 'package:doctor_speed_app/shared/widgets/feedback/app_confirm_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -23,17 +25,21 @@ class _PlaceholderPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Doctor Speed')),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(24.0),
+      body: AppSafeAreaPage(
+        child: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Center(
-                child: Text(
-                  'Router is ready',
-                  style: context.textTheme.titleMedium,
-                ),
+              AppButton(
+                // isExpanded: false,
+                label: 'label',
+                onPressed: () async {
+                  await showAppConfirmDialog(
+                    variant: AppConfirmDialogVariant.warning,
+                    context,
+                    title: 'Delete consultation?',
+                    message: 'This action cannot be undone.',
+                  );
+                },
               ),
             ],
           ),

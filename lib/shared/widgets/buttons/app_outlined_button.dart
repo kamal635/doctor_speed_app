@@ -8,6 +8,7 @@ class AppOutlinedButton extends StatelessWidget {
     this.icon,
     this.isExpanded = true,
     this.isEnabled = true,
+    this.foregroundColor,
   });
 
   final String label;
@@ -15,10 +16,12 @@ class AppOutlinedButton extends StatelessWidget {
   final Widget? icon;
   final bool isExpanded;
   final bool isEnabled;
+  final Color? foregroundColor;
 
   @override
   Widget build(BuildContext context) {
     final button = OutlinedButton(
+      style: OutlinedButton.styleFrom(foregroundColor: foregroundColor),
       onPressed: isEnabled ? onPressed : null,
       child: Row(
         mainAxisSize: MainAxisSize.min,

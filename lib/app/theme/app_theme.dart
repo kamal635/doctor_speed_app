@@ -175,8 +175,8 @@ abstract final class AppTheme {
       fillColor: fillColor,
       isDense: true,
       contentPadding: const EdgeInsets.symmetric(
-        horizontal: AppSpacing.md,
-        vertical: AppSpacing.md,
+        horizontal: AppSpacing.s16,
+        vertical: AppSpacing.s16,
       ),
       hintStyle: AppTypography.bodyMedium.copyWith(color: textSecondary),
       labelStyle: AppTypography.bodyMedium.copyWith(color: textSecondary),
@@ -194,13 +194,13 @@ abstract final class AppTheme {
       style: FilledButton.styleFrom(
         elevation: 0,
         padding: const EdgeInsets.symmetric(
-          horizontal: AppSpacing.lg,
-          vertical: AppSpacing.md,
+          horizontal: AppSpacing.s24,
+          vertical: AppSpacing.s16,
         ),
         backgroundColor: colorScheme.primary,
         foregroundColor: colorScheme.onPrimary,
         textStyle: AppTypography.button,
-        shape: const RoundedRectangleBorder(borderRadius: AppRadius.radiusPill),
+        shape: const RoundedRectangleBorder(borderRadius: AppRadius.radiusMd),
       ),
     );
   }
@@ -211,13 +211,13 @@ abstract final class AppTheme {
         elevation: 0,
         minimumSize: const Size.fromHeight(52),
         padding: const EdgeInsets.symmetric(
-          horizontal: AppSpacing.lg,
-          vertical: AppSpacing.md,
+          horizontal: AppSpacing.s24,
+          vertical: AppSpacing.s16,
         ),
         backgroundColor: colorScheme.primary,
         foregroundColor: colorScheme.onPrimary,
         textStyle: AppTypography.button,
-        shape: const RoundedRectangleBorder(borderRadius: AppRadius.radiusPill),
+        shape: const RoundedRectangleBorder(borderRadius: AppRadius.radiusMd),
       ),
     );
   }
@@ -227,15 +227,15 @@ abstract final class AppTheme {
       style: OutlinedButton.styleFrom(
         // minimumSize: const Size.fromHeight(52),
         padding: const EdgeInsets.symmetric(
-          horizontal: AppSpacing.lg,
-          vertical: AppSpacing.md,
+          horizontal: AppSpacing.s24,
+          vertical: AppSpacing.s16,
         ),
         foregroundColor: colorScheme.primary,
         textStyle: AppTypography.labelLarge.copyWith(
           color: colorScheme.primary,
         ),
         side: BorderSide(color: colorScheme.outline),
-        shape: const RoundedRectangleBorder(borderRadius: AppRadius.radiusPill),
+        shape: const RoundedRectangleBorder(borderRadius: AppRadius.radiusMd),
       ),
     );
   }
@@ -248,8 +248,8 @@ abstract final class AppTheme {
           color: colorScheme.primary,
         ),
         padding: const EdgeInsets.symmetric(
-          horizontal: AppSpacing.sm,
-          vertical: AppSpacing.xs,
+          horizontal: AppSpacing.s12,
+          vertical: AppSpacing.s8,
         ),
       ),
     );

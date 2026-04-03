@@ -1,7 +1,7 @@
 import 'package:doctor_speed_app/core/extensions/build_context_theme_x.dart';
 import 'package:doctor_speed_app/shared/design_system/app_colors.dart';
+import 'package:doctor_speed_app/shared/design_system/app_gaps.dart';
 import 'package:doctor_speed_app/shared/design_system/app_radius.dart';
-import 'package:doctor_speed_app/shared/widgets/app_gaps.dart';
 import 'package:flutter/material.dart';
 
 import 'app_loading_indicator.dart';
