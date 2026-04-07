@@ -36,7 +36,7 @@ class _PlaceholderPage extends StatelessWidget {
                   await showAppConfirmDialog(
                     context,
                     title: 'title',
-                    variant: AppConfirmDialogVariant.warning,
+                    variant: AppConfirmDialogVariant.logout,
                   );
                 },
               ),
