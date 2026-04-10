@@ -8,5 +8,6 @@ enum FailureCode {
   conflict,
   rateLimited,
   server,
+  cancelled,
   unknown,
 }

@@ -1,3 +1,5 @@
+import 'package:doctor_speed_app/core/extensions/string_x.dart';
+
 import 'api_constants.dart';
 
 abstract final class NetworkHeadersPolicy {
@@ -11,6 +13,6 @@ abstract final class NetworkHeadersPolicy {
     Map<String, String>? extra,
   }) {
     return <String, String>{...?base, ...?extra}
-      ..removeWhere((key, value) => value.trim().isEmpty);
+      ..removeWhere((key, value) => value.isBlank);
   }
 }

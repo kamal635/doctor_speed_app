@@ -1,3 +1,4 @@
+import 'package:doctor_speed_app/core/extensions/build_context_localizations_x.dart';
 import 'package:doctor_speed_app/core/extensions/build_context_theme_x.dart';
 import 'package:doctor_speed_app/shared/design_system/app_gaps.dart';
 import 'package:doctor_speed_app/shared/design_system/app_icon_size.dart';
@@ -30,7 +31,8 @@ class AppErrorState extends StatelessWidget {
   Widget build(BuildContext context) {
     final textTheme = context.textTheme;
     final colorScheme = context.colorScheme;
-    final resolvedMessage = message ?? failure?.displayMessage;
+    final l10n = context.l10n;
+    final resolvedMessage = message ?? failure?.displayMessage(l10n);
 
     return Center(
       child: Padding(

@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:doctor_speed_app/core/extensions/string_x.dart';
 
 import '../api_constants.dart';
 import '../token_provider.dart';
@@ -16,7 +17,7 @@ class AuthTokenInterceptor extends Interceptor {
   ) async {
     final token = await _tokenProvider.getAccessToken();
 
-    if (token != null && token.trim().isNotEmpty) {
+    if (token != null && token.isNotBlank) {
       options.headers[ApiConstants.authorizationHeader] =
           '${ApiConstants.bearerPrefix} $token';
     }

@@ -1,29 +1,37 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 import '../../shared/design_system/app_breakpoints.dart';
-import '../../shared/design_system/app_window_size_class.dart';
+import '../../shared/design_system/app_screen_size_class.dart';
 
 extension BuildContextResponsiveX on BuildContext {
-  Size get windowSize => MediaQuery.sizeOf(this);
+  MediaQueryData get mediaQuery => MediaQuery.of(this);
 
-  double get windowWidth => windowSize.width;
+  Size get screenSize => MediaQuery.sizeOf(this);
 
-  AppWindowWidthSizeClass get widthSizeClass {
-    if (windowWidth < AppBreakpoints.compact) {
-      return AppWindowWidthSizeClass.compact;
+  double get screenWidth => screenSize.width;
+  double get screenHeight => screenSize.height;
+
+  EdgeInsets get viewPadding => MediaQuery.viewPaddingOf(this);
+  EdgeInsets get viewInsets => MediaQuery.viewInsetsOf(this);
+
+  bool get isKeyboardOpen => viewInsets.bottom > 0;
+
+  AppScreenSizeClass get widthSizeClass {
+    if (screenWidth < AppBreakpoints.compact) {
+      return AppScreenSizeClass.compact;
     }
 
-    if (windowWidth < AppBreakpoints.medium) {
-      return AppWindowWidthSizeClass.medium;
+    if (screenWidth < AppBreakpoints.medium) {
+      return AppScreenSizeClass.medium;
     }
 
-    return AppWindowWidthSizeClass.expanded;
+    return AppScreenSizeClass.expanded;
   }
 
-  bool get isCompactWidth => widthSizeClass == AppWindowWidthSizeClass.compact;
+  bool get isCompactWidth => widthSizeClass == AppScreenSizeClass.compact;
+  bool get isMediumWidth => widthSizeClass == AppScreenSizeClass.medium;
+  bool get isExpandedWidth => widthSizeClass == AppScreenSizeClass.expanded;
 
-  bool get isMediumWidth => widthSizeClass == AppWindowWidthSizeClass.medium;
-
-  bool get isExpandedWidth =>
-      widthSizeClass == AppWindowWidthSizeClass.expanded;
+  void unfocus() => FocusScope.of(this).unfocus();
 }

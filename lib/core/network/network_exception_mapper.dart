@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:doctor_speed_app/core/errors/failure_mapper.dart';
+import 'package:doctor_speed_app/core/extensions/string_x.dart';
 
 import '../errors/failure.dart';
 import '../errors/failure_code.dart';
@@ -49,7 +50,7 @@ Failure _mapDioException(DioException error, StackTrace? stackTrace) {
 
     case DioExceptionType.cancel:
       return Failure(
-        code: FailureCode.unknown,
+        code: FailureCode.cancelled,
         message: 'Request cancelled: $requestPath',
         cause: error,
         stackTrace: resolvedStackTrace,
@@ -133,18 +134,17 @@ String? _extractResponseMessage(Object? data) {
   }
 
   if (data is String) {
-    final value = data.trim();
-    return value.isEmpty ? null : value;
+    return data.trimmedOrNull;
   }
 
   if (data is Map<String, dynamic>) {
     final message = data['message'];
-    if (message is String && message.trim().isNotEmpty) {
+    if (message is String && message.isNotBlank) {
       return message.trim();
     }
 
     final error = data['error'];
-    if (error is String && error.trim().isNotEmpty) {
+    if (error is String && error.isNotBlank) {
       return error.trim();
     }
   }
