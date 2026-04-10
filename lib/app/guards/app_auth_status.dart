@@ -1,0 +1,1 @@
+enum AppAuthStatus { unknown, authenticated, unauthenticated }
