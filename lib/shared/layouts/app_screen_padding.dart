@@ -1,5 +1,5 @@
 import 'package:doctor_speed_app/core/extensions/build_context_responsive_x.dart';
-import 'package:doctor_speed_app/shared/design_system/app_breakpoints.dart';
+import 'package:doctor_speed_app/shared/design_system/app_screen_size_class.dart';
 import 'package:flutter/widgets.dart';
 
 import '../design_system/app_spacing.dart';
@@ -11,26 +11,25 @@ class AppScreenPadding extends StatelessWidget {
   final EdgeInsetsGeometry? padding;
 
   static EdgeInsets resolve(BuildContext context) {
-    final width = context.windowWidth;
+    final widthSizeClass = context.widthSizeClass;
 
-    if (width >= AppBreakpoints.large) {
-      return const EdgeInsets.symmetric(
-        horizontal: AppSpacing.s32,
-        vertical: AppSpacing.s16,
-      );
+    switch (widthSizeClass) {
+      case AppScreenSizeClass.compact:
+        return const EdgeInsets.symmetric(
+          horizontal: AppSpacing.s16,
+          vertical: AppSpacing.s16,
+        );
+      case AppScreenSizeClass.medium:
+        return const EdgeInsets.symmetric(
+          horizontal: AppSpacing.s24,
+          vertical: AppSpacing.s16,
+        );
+      case AppScreenSizeClass.expanded:
+        return const EdgeInsets.symmetric(
+          horizontal: AppSpacing.s32,
+          vertical: AppSpacing.s16,
+        );
     }
-
-    if (width >= AppBreakpoints.compact) {
-      return const EdgeInsets.symmetric(
-        horizontal: AppSpacing.s24,
-        vertical: AppSpacing.s16,
-      );
-    }
-
-    return const EdgeInsets.symmetric(
-      horizontal: AppSpacing.s16,
-      vertical: AppSpacing.s16,
-    );
   }
 
   @override

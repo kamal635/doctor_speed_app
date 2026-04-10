@@ -1,7 +1,17 @@
 {
-    "@@locale": "ar",
-    "commonConfirm": "تأكيد",
-    "commonCancel": "إلغاء",
-    "commonDiscardChanges": "تجاهل التعديلات"
-
+  "@@locale": "ar",
+  "commonConfirm": "تأكيد",
+  "commonCancel": "إلغاء",
+  "commonDiscardChanges": "تجاهل التعديلات",
+  
+  "failureNetwork": "يرجى التحقق من اتصال الإنترنت ثم المحاولة مرة أخرى.",
+  "failureTimeout": "استغرق الطلب وقتًا طويلًا. يرجى المحاولة مرة أخرى.",
+  "failureUnauthorized": "تحتاج إلى تسجيل الدخول مجددًا للمتابعة.",
+  "failureForbidden": "ليس لديك صلاحية لتنفيذ هذا الإجراء.",
+  "failureValidation": "يرجى التحقق من البيانات المدخلة ثم المحاولة مرة أخرى.",
+  "failureNotFound": "تعذر العثور على المورد المطلوب.",
+  "failureConflict": "تعذر إكمال هذا الإجراء بسبب تعارض في البيانات.",
+  "failureRateLimited": "عدد المحاولات كبير جدًا. يرجى المحاولة لاحقًا.",
+  "failureServer": "حدث خطأ في الخادم. يرجى المحاولة لاحقًا.",
+  "failureUnknown": "حدث خطأ ما. يرجى المحاولة مرة أخرى."
 }

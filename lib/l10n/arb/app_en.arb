@@ -1,7 +1,17 @@
 {
-
-    "@@locale": "en",
-    "commonConfirm": "Confirm",
-    "commonCancel": "Cancel",
-    "commonDiscardChanges": "Discard Changes"
+  "@@locale": "en",
+  "commonConfirm": "Confirm",
+  "commonCancel": "Cancel",
+  "commonDiscardChanges": "Discard Changes",
+  
+  "failureNetwork": "Please check your internet connection and try again.",
+  "failureTimeout": "The request took too long. Please try again.",
+  "failureUnauthorized": "You need to sign in again to continue.",
+  "failureForbidden": "You do not have permission to perform this action.",
+  "failureValidation": "Please check your input and try again.",
+  "failureNotFound": "The requested resource could not be found.",
+  "failureConflict": "This action could not be completed due to a data conflict.",
+  "failureRateLimited": "Too many attempts. Please try again later.",
+  "failureServer": "Something went wrong on the server. Please try again later.",
+  "failureUnknown": "Something went wrong. Please try again."
 }

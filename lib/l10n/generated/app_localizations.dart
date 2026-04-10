@@ -115,6 +115,66 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Discard Changes'**
   String get commonDiscardChanges;
+
+  /// No description provided for @failureNetwork.
+  ///
+  /// In en, this message translates to:
+  /// **'Please check your internet connection and try again.'**
+  String get failureNetwork;
+
+  /// No description provided for @failureTimeout.
+  ///
+  /// In en, this message translates to:
+  /// **'The request took too long. Please try again.'**
+  String get failureTimeout;
+
+  /// No description provided for @failureUnauthorized.
+  ///
+  /// In en, this message translates to:
+  /// **'You need to sign in again to continue.'**
+  String get failureUnauthorized;
+
+  /// No description provided for @failureForbidden.
+  ///
+  /// In en, this message translates to:
+  /// **'You do not have permission to perform this action.'**
+  String get failureForbidden;
+
+  /// No description provided for @failureValidation.
+  ///
+  /// In en, this message translates to:
+  /// **'Please check your input and try again.'**
+  String get failureValidation;
+
+  /// No description provided for @failureNotFound.
+  ///
+  /// In en, this message translates to:
+  /// **'The requested resource could not be found.'**
+  String get failureNotFound;
+
+  /// No description provided for @failureConflict.
+  ///
+  /// In en, this message translates to:
+  /// **'This action could not be completed due to a data conflict.'**
+  String get failureConflict;
+
+  /// No description provided for @failureRateLimited.
+  ///
+  /// In en, this message translates to:
+  /// **'Too many attempts. Please try again later.'**
+  String get failureRateLimited;
+
+  /// No description provided for @failureServer.
+  ///
+  /// In en, this message translates to:
+  /// **'Something went wrong on the server. Please try again later.'**
+  String get failureServer;
+
+  /// No description provided for @failureUnknown.
+  ///
+  /// In en, this message translates to:
+  /// **'Something went wrong. Please try again.'**
+  String get failureUnknown;
 }
 
 class _AppLocalizationsDelegate
