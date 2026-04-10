@@ -1,9 +1,7 @@
-import 'package:doctor_speed_app/shared/layouts/app_safe_area_page.dart';
-import 'package:doctor_speed_app/shared/widgets/buttons/app_button.dart';
-import 'package:doctor_speed_app/shared/widgets/feedback/app_confirm_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import 'routes/app_route_names.dart';
 import 'routes/app_route_paths.dart';
 
 final GoRouter appRouter = GoRouter(
@@ -11,39 +9,38 @@ final GoRouter appRouter = GoRouter(
   routes: <RouteBase>[
     GoRoute(
       path: AppRoutePaths.root,
-      builder: (context, state) {
-        return const _PlaceholderPage();
-      },
+      name: AppRouteNames.root,
+      builder: (context, state) => const _RoutePlaceholderPage(title: 'Root'),
+    ),
+    GoRoute(
+      path: AppRoutePaths.startup,
+      name: AppRouteNames.startup,
+      builder: (context, state) =>
+          const _RoutePlaceholderPage(title: 'Startup'),
+    ),
+    GoRoute(
+      path: AppRoutePaths.home,
+      name: AppRouteNames.home,
+      builder: (context, state) => const _RoutePlaceholderPage(title: 'Home'),
+    ),
+    GoRoute(
+      path: AppRoutePaths.login,
+      name: AppRouteNames.login,
+      builder: (context, state) => const _RoutePlaceholderPage(title: 'Login'),
     ),
   ],
 );
 
-class _PlaceholderPage extends StatelessWidget {
-  const _PlaceholderPage();
+class _RoutePlaceholderPage extends StatelessWidget {
+  const _RoutePlaceholderPage({required this.title});
+
+  final String title;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Doctor Speed')),
-      body: AppSafeAreaPage(
-        child: Center(
-          child: Column(
-            children: [
-              AppButton(
-                // isExpanded: false,
-                label: 'label',
-                onPressed: () async {
-                  await showAppConfirmDialog(
-                    context,
-                    title: 'title',
-                    variant: AppConfirmDialogVariant.logout,
-                  );
-                },
-              ),
-            ],
-          ),
-        ),
-      ),
+      appBar: AppBar(title: Text(title)),
+      body: Center(child: Text(title)),
     );
   }
 }
