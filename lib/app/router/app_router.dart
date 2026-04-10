@@ -4,13 +4,13 @@ import 'package:doctor_speed_app/shared/widgets/feedback/app_confirm_dialog.dart
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import 'app_routes.dart';
+import 'routes/app_route_paths.dart';
 
 final GoRouter appRouter = GoRouter(
-  initialLocation: AppRoutes.root,
+  initialLocation: AppRoutePaths.root,
   routes: <RouteBase>[
     GoRoute(
-      path: AppRoutes.root,
+      path: AppRoutePaths.root,
       builder: (context, state) {
         return const _PlaceholderPage();
       },
