@@ -1,4 +1,4 @@
-import 'package:doctor_speed_app/core/constants/app_constants.dart';
+import 'package:doctor_speed_app/app/config/app_config.dart';
 import 'package:doctor_speed_app/l10n/generated/app_localizations.dart';
 import 'package:flutter/material.dart';
 
@@ -11,7 +11,7 @@ class DoctorSpeedApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: AppConstants.appName,
+      title: AppConfig.appName,
       debugShowCheckedModeBanner: false,
       theme: AppTheme.light,
       darkTheme: AppTheme.dark,

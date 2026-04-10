@@ -1,3 +1,1 @@
-abstract final class AppConstants {
-  static const appName = 'Doctor Speed';
-}
+abstract final class AppConstants {}
