@@ -193,6 +193,7 @@ abstract final class AppTheme {
     return FilledButtonThemeData(
       style: FilledButton.styleFrom(
         elevation: 0,
+
         padding: const EdgeInsets.symmetric(
           horizontal: AppSpacing.s24,
           vertical: AppSpacing.s16,
@@ -209,7 +210,6 @@ abstract final class AppTheme {
     return ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         elevation: 0,
-        minimumSize: const Size.fromHeight(52),
         padding: const EdgeInsets.symmetric(
           horizontal: AppSpacing.s24,
           vertical: AppSpacing.s16,

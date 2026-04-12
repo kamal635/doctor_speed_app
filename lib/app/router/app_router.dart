@@ -38,9 +38,6 @@ class _RoutePlaceholderPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text(title)),
-      body: Center(child: Text(title)),
-    );
+    return Scaffold(body: Center(child: Text(title)));
   }
 }
