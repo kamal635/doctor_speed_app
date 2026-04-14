@@ -1,3 +1,4 @@
+import 'package:doctor_speed_app/shared/design_system/app_icon_size.dart';
 import 'package:flutter/material.dart';
 
 import '../../shared/design_system/app_colors.dart';
@@ -69,6 +70,16 @@ abstract final class AppTheme {
         margin: EdgeInsets.zero,
         shape: RoundedRectangleBorder(borderRadius: AppRadius.radiusLg),
       ),
+      iconTheme: IconThemeData(color: textPrimary, size: AppIconSize.md),
+
+      iconButtonTheme: IconButtonThemeData(
+        style: IconButton.styleFrom(
+          foregroundColor: textPrimary,
+          iconSize: AppIconSize.md,
+          padding: const EdgeInsets.all(AppSpacing.s8),
+          shape: const RoundedRectangleBorder(borderRadius: AppRadius.radiusMd),
+        ),
+      ),
     );
   }
 
@@ -132,6 +143,16 @@ abstract final class AppTheme {
         margin: EdgeInsets.zero,
         shape: RoundedRectangleBorder(borderRadius: AppRadius.radiusLg),
       ),
+      iconTheme: IconThemeData(color: textPrimary, size: AppIconSize.md),
+
+      iconButtonTheme: IconButtonThemeData(
+        style: IconButton.styleFrom(
+          foregroundColor: textPrimary,
+          iconSize: AppIconSize.md,
+          padding: const EdgeInsets.all(AppSpacing.s8),
+          shape: const RoundedRectangleBorder(borderRadius: AppRadius.radiusMd),
+        ),
+      ),
     );
   }
 
@@ -193,6 +214,7 @@ abstract final class AppTheme {
     return FilledButtonThemeData(
       style: FilledButton.styleFrom(
         elevation: 0,
+
         padding: const EdgeInsets.symmetric(
           horizontal: AppSpacing.s24,
           vertical: AppSpacing.s16,
@@ -209,7 +231,6 @@ abstract final class AppTheme {
     return ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         elevation: 0,
-        minimumSize: const Size.fromHeight(52),
         padding: const EdgeInsets.symmetric(
           horizontal: AppSpacing.s24,
           vertical: AppSpacing.s16,

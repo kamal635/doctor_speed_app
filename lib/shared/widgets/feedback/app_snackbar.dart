@@ -7,6 +7,7 @@ import 'package:doctor_speed_app/shared/design_system/app_icon_size.dart';
 import 'package:doctor_speed_app/shared/design_system/app_radius.dart';
 import 'package:doctor_speed_app/shared/design_system/app_shadows.dart';
 import 'package:doctor_speed_app/shared/design_system/app_spacing.dart';
+import 'package:doctor_speed_app/shared/icons/app_icons.dart';
 import 'package:doctor_speed_app/shared/widgets/buttons/app_text_button.dart';
 import 'package:flutter/material.dart';
 
@@ -120,7 +121,7 @@ class _AppSnackBarContent extends StatelessWidget {
         return _SnackBarColors(
           accent: accent,
           accentSoft: accent.withValues(alpha: 0.12),
-          icon: Icons.check_rounded,
+          icon: AppIcons.success,
         );
 
       case AppSnackBarVariant.error:
@@ -128,7 +129,7 @@ class _AppSnackBarContent extends StatelessWidget {
         return _SnackBarColors(
           accent: accent,
           accentSoft: accent.withValues(alpha: 0.12),
-          icon: Icons.warning_amber_rounded,
+          icon: AppIcons.error,
         );
 
       case AppSnackBarVariant.info:
@@ -136,7 +137,7 @@ class _AppSnackBarContent extends StatelessWidget {
         return _SnackBarColors(
           accent: accent,
           accentSoft: accent.withValues(alpha: 0.12),
-          icon: Icons.info_outline_rounded,
+          icon: AppIcons.info,
         );
     }
   }

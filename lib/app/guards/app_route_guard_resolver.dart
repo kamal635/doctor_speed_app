@@ -29,7 +29,10 @@ abstract final class AppRouteGuardResolver {
           case AppRouteGuard.guestOnly:
             return null;
           case AppRouteGuard.requiresAuth:
-            return AppRoutePaths.login;
+            return Uri(
+              path: AppRoutePaths.login,
+              queryParameters: {'from': matchedLocation},
+            ).toString();
         }
     }
   }

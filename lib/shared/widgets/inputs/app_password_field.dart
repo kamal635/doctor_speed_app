@@ -1,3 +1,5 @@
+import 'package:doctor_speed_app/shared/icons/app_icons.dart';
+import 'package:doctor_speed_app/shared/widgets/buttons/app_icon_button.dart';
 import 'package:flutter/material.dart';
 
 import 'app_text_field.dart';
@@ -61,13 +63,9 @@ class _AppPasswordFieldState extends State<AppPasswordField> {
       enabled: widget.enabled,
       autofocus: widget.autofocus,
       readOnly: widget.readOnly,
-      suffixIcon: IconButton(
+      suffixIcon: AppIconButton(
         onPressed: widget.enabled ? _toggleVisibility : null,
-        icon: Icon(
-          _obscureText
-              ? Icons.visibility_off_outlined
-              : Icons.visibility_outlined,
-        ),
+        icon: Icon(_obscureText ? AppIcons.eyeOff : AppIcons.eye),
       ),
     );
   }

@@ -1,4 +1,5 @@
 import 'package:doctor_speed_app/core/extensions/string_x.dart';
+import 'package:doctor_speed_app/shared/icons/app_icons.dart';
 import 'package:flutter/material.dart';
 
 import 'app_text_field.dart';
@@ -49,7 +50,7 @@ class AppSearchField extends StatelessWidget {
       suffixIcon: hasText
           ? IconButton(
               onPressed: enabled ? onClear : null,
-              icon: const Icon(Icons.close),
+              icon: const Icon(AppIcons.close),
             )
           : null,
     );
