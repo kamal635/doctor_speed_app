@@ -3,6 +3,7 @@ import 'package:doctor_speed_app/l10n/generated/app_localizations.dart';
 import 'package:doctor_speed_app/shared/design_system/app_colors.dart';
 import 'package:doctor_speed_app/shared/design_system/app_icon_size.dart';
 import 'package:doctor_speed_app/shared/design_system/app_spacing.dart';
+import 'package:doctor_speed_app/shared/icons/app_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -115,7 +116,7 @@ class AppConfirmDialog extends StatelessWidget {
     switch (variant) {
       case AppConfirmDialogVariant.confirm:
         return _AppConfirmDialogConfig(
-          iconData: Icons.check_circle,
+          iconData: AppIcons.success,
           iconColor: AppColors.success,
           iconBackgroundColor: AppColors.success.withValues(alpha: 0.12),
           defaultConfirmLabel: l10n.commonConfirm,
@@ -124,7 +125,7 @@ class AppConfirmDialog extends StatelessWidget {
 
       case AppConfirmDialogVariant.logout:
         return _AppConfirmDialogConfig(
-          iconData: Icons.logout,
+          iconData: AppIcons.logout,
           iconColor: colorScheme.error,
           iconBackgroundColor: colorScheme.error.withValues(alpha: 0.12),
           defaultConfirmLabel: l10n.commonConfirm,
@@ -133,7 +134,7 @@ class AppConfirmDialog extends StatelessWidget {
 
       case AppConfirmDialogVariant.delete:
         return _AppConfirmDialogConfig(
-          iconData: Icons.delete_forever,
+          iconData: AppIcons.delete,
           iconColor: colorScheme.error,
           iconBackgroundColor: colorScheme.error.withValues(alpha: 0.12),
           defaultConfirmLabel: l10n.commonConfirm,
@@ -142,7 +143,7 @@ class AppConfirmDialog extends StatelessWidget {
 
       case AppConfirmDialogVariant.warning:
         return _AppConfirmDialogConfig(
-          iconData: Icons.warning,
+          iconData: AppIcons.warning,
           iconColor: AppColors.warning,
           iconBackgroundColor: AppColors.warning.withValues(alpha: 0.12),
           defaultConfirmLabel: l10n.commonConfirm,
